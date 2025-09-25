@@ -56,6 +56,3 @@ go run .
 - The table shows the last 500 packets to keep memory stable
 - Packet lengths show the captured size, not the full original frame length if a snaplen is in effect
 
-## License
-
-MIT
