@@ -1,4 +1,4 @@
-module github.com/devzephyr/go-packet-sniffer-tui
+module github.com/devzephyr/GoPacketSniffer
 
 go 1.22
 
