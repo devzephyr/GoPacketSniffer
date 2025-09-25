@@ -1,4 +1,4 @@
-# go-packet-sniffer-tui
+# GoPacketSniffer
 
 A simple cross‑platform terminal UI packet viewer written in Go. It uses libpcap via gopacket and tview for the UI. You can select a network interface, apply a BPF filter, and watch packets in a live table.
 
@@ -24,7 +24,7 @@ A simple cross‑platform terminal UI packet viewer written in Go. It uses libpc
 
 ```bash
 git clone https://github.com/devzephyr/GoPacketSniffer.git
-cd go-packet-sniffer-tui
+cd GoPacketSniffer
 go build ./...
 ```
 
