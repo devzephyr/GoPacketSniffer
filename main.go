@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"log"
-	"net"
 	"os"
 	"os/signal"
 	"strings"
@@ -131,18 +130,18 @@ func (s *Sniffer) SetIface(name string) {
 
 // UI application
 type AppUI struct {
-	app          *tview.Application
-	devices      []pcap.Interface
-	deviceList   *tview.List
-	table        *tview.Table
-	status       *tview.TextView
-	help         *tview.TextView
-	filterField  *tview.InputField
-	pages        *tview.Pages
-	sniffer      *Sniffer
-	rowLimit     int
-	rowCount     int
-	startedAt    time.Time
+	app         *tview.Application
+	devices     []pcap.Interface
+	deviceList  *tview.List
+	table       *tview.Table
+	status      *tview.TextView
+	help        *tview.TextView
+	filterField *tview.InputField
+	pages       *tview.Pages
+	sniffer     *Sniffer
+	rowLimit    int
+	rowCount    int
+	startedAt   time.Time
 }
 
 func NewAppUI() *AppUI {
@@ -251,7 +250,7 @@ func (ui *AppUI) buildFilterField() *tview.InputField {
 		SetFieldWidth(40).
 		SetDoneFunc(func(key tcell.Key) {
 			if key == tcell.KeyEnter {
-				val := in.GetText()
+				val := ui.filterField.GetText()
 				ui.sniffer.SetFilter(val)
 				ui.updateStatus(fmt.Sprintf("Filter set to: %q. Restart capture to apply.", val))
 				ui.pages.SwitchToPage("capture")
@@ -459,4 +458,3 @@ func main() {
 		log.Fatalf("Error: %v", err)
 	}
 }
-
