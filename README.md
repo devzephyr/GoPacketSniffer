@@ -23,7 +23,7 @@ A simple cross‑platform terminal UI packet viewer written in Go. It uses libpc
 ## Build
 
 ```bash
-git clone https://github.com/devzephyr/go-packet-sniffer-tui.git
+git clone https://github.com/devzephyr/GoPacketSniffer.git
 cd go-packet-sniffer-tui
 go build ./...
 ```
